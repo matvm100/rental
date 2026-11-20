@@ -1,4 +1,4 @@
-name: Gitleaks
+name: Secret detection
 
 on:
   push:
@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   gitleaks:
-    name: Secret scan (full history)
+    name: Secret detection
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

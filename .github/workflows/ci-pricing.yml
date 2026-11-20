@@ -3,9 +3,6 @@ name: CI/CD - pricing-service
 on:
   push:
     branches: [main, develop,tp/01-ci]
-    paths:
-      - 'apps/pricing-service/**'
-      - '.github/workflows/ci-pricing.yml'
   pull_request:
     branches: [main, develop]
 permissions:
@@ -56,7 +53,7 @@ jobs:
           if-no-files-found: warn
   
   code-quality:                  
-    name: Code Quality (ruff)
+    name: Python quality
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -73,7 +70,7 @@ jobs:
           python -m ruff check .
 
   build-and-push:
-    name: Build Docker image
+    name: ¨Python Docker image
     runs-on: ubuntu-latest
     timeout-minutes: 20
     needs: [test, code-quality]
