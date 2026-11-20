@@ -70,7 +70,7 @@ jobs:
           python -m ruff check .
 
   build-and-push:
-    name: ¨Python Docker image
+    name: Python Docker image
     runs-on: ubuntu-latest
     timeout-minutes: 20
     needs: [test, code-quality]
